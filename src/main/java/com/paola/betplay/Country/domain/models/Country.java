@@ -1,29 +1,29 @@
 package com.paola.betplay.Country.domain.models;
 
 public class Country {
-    private int id;
-    private String name;
+    private int idCountry;
+    private String nameCountry;
 
     public Country() {}
 
-    public Country(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public Country(int idCountry, String nameCountry) {
+        this.idCountry = idCountry;
+        this.nameCountry = nameCountry;
     }
 
-    public int getId() {
-        return id;
+    public int getIdCountry() {
+        return idCountry;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdCountry(int idCountry) {
+        this.idCountry = idCountry;
     }
 
-    public String getName() {
-        return name;
+    public String getNameCountry() {
+        return nameCountry;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameCountry(String nameCountry) {
+        this.nameCountry = nameCountry;
     }
 }

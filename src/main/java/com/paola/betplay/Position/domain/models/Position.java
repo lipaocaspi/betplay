@@ -1,29 +1,29 @@
 package com.paola.betplay.Position.domain.models;
 
 public class Position {
-    private int id;
-    private String name;
+    private int idPosition;
+    private String descriptionPosition;
 
     public Position() {}
 
-    public Position(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public Position(int idPosition, String descriptionPosition) {
+        this.idPosition = idPosition;
+        this.descriptionPosition = descriptionPosition;
     }
 
-    public int getId() {
-        return id;
+    public int getIdPosition() {
+        return idPosition;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdPosition(int idPosition) {
+        this.idPosition = idPosition;
     }
 
-    public String getName() {
-        return name;
+    public String getDescriptionPosition() {
+        return descriptionPosition;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescriptionPosition(String descriptionPosition) {
+        this.descriptionPosition = descriptionPosition;
     }
 }

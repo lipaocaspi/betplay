@@ -1,32 +1,32 @@
 package com.paola.betplay.Region.domain.models;
 
 public class Region {
-    private int id;
-    private String name;
+    private int idRegion;
+    private String nameRegion;
     private int idCountry;
 
     public Region() {}
 
-    public Region(int id, String name, int idCountry) {
-        this.id = id;
-        this.name = name;
+    public Region(int idRegion, String nameRegion, int idCountry) {
+        this.idRegion = idRegion;
+        this.nameRegion = nameRegion;
         this.idCountry = idCountry;
     }
 
-    public int getId() {
-        return id;
+    public int getIdRegion() {
+        return idRegion;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdRegion(int idRegion) {
+        this.idRegion = idRegion;
     }
 
-    public String getName() {
-        return name;
+    public String getNameRegion() {
+        return nameRegion;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameRegion(String nameRegion) {
+        this.nameRegion = nameRegion;
     }
 
     public int getIdCountry() {

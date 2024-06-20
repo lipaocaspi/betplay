@@ -1,8 +1,11 @@
 package com.paola.betplay.Team.domain.models;
 
+import java.time.LocalDate;
+
 public class Team {
-    private int id;
-    private String name;
+    private int idTeam;
+    private String nameTeam;
+    private LocalDate dateOfCreationTeam;
     private int playedMatches;
     private int wonMatches;
     private int lostMatches;
@@ -11,12 +14,14 @@ public class Team {
     private int goalsScored;
     private int goalsAgainst;
     private int totalPoints;
+    private int idCity;
 
     public Team() {}
-    
-    public Team(int id, String name, int playedMatches, int wonMatches, int lostMatches, int tiedMatches, int totalGoals, int goalsScored, int goalsAgainst, int totalPoints) {
-        this.id = id;
-        this.name = name;
+
+    public Team(int idTeam, String nameTeam, LocalDate dateOfCreationTeam, int playedMatches, int wonMatches, int lostMatches, int tiedMatches, int totalGoals, int goalsScored, int goalsAgainst, int totalPoints, int idCity) {
+        this.idTeam = idTeam;
+        this.nameTeam = nameTeam;
+        this.dateOfCreationTeam = dateOfCreationTeam;
         this.playedMatches = playedMatches;
         this.wonMatches = wonMatches;
         this.lostMatches = lostMatches;
@@ -25,22 +30,31 @@ public class Team {
         this.goalsScored = goalsScored;
         this.goalsAgainst = goalsAgainst;
         this.totalPoints = totalPoints;
+        this.idCity = idCity;
     }
 
-    public int getId() {
-        return id;
+    public int getIdTeam() {
+        return idTeam;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdTeam(int idTeam) {
+        this.idTeam = idTeam;
     }
 
-    public String getName() {
-        return name;
+    public String getNameTeam() {
+        return nameTeam;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameTeam(String nameTeam) {
+        this.nameTeam = nameTeam;
+    }
+
+    public LocalDate getDateOfCreationTeam() {
+        return dateOfCreationTeam;
+    }
+
+    public void setDateOfCreationTeam(LocalDate dateOfCreationTeam) {
+        this.dateOfCreationTeam = dateOfCreationTeam;
     }
 
     public int getPlayedMatches() {
@@ -105,5 +119,13 @@ public class Team {
 
     public void setTotalPoints(int totalPoints) {
         this.totalPoints = totalPoints;
+    }
+
+    public int getIdCity() {
+        return idCity;
+    }
+
+    public void setIdCity(int idCity) {
+        this.idCity = idCity;
     }
 }
