@@ -6,6 +6,10 @@ public class Country {
 
     public Country() {}
 
+    public Country(String nameCountry) {
+        this.nameCountry = nameCountry;
+    }
+
     public Country(int idCountry, String nameCountry) {
         this.idCountry = idCountry;
         this.nameCountry = nameCountry;
