@@ -7,6 +7,15 @@ public class City {
 
     public City() {}
 
+    public City(String nameCity) {
+        this.nameCity = nameCity;
+    }
+
+    public City(int idCity, String nameCity) {
+        this.idCity = idCity;
+        this.nameCity = nameCity;
+    }
+
     public City(int idCity, String nameCity, int idRegion) {
         this.idCity = idCity;
         this.nameCity = nameCity;
