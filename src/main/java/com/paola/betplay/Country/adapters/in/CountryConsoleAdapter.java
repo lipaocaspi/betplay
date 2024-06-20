@@ -24,11 +24,11 @@ public class CountryConsoleAdapter {
             System.out.println("5. Listar todos Paises");
             System.out.println("6. Salir");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    System.out.print("Ingrese el nobre del pais: ");
+                    System.out.print("Ingrese el nombre del pais: ");
                     String createName = scanner.nextLine();
 
                     Country newCountry = new Country(createName);
@@ -51,10 +51,10 @@ public class CountryConsoleAdapter {
                     int findId = scanner.nextInt();
                     scanner.nextLine();
 
-                    Optional<Country> pais = countryService.getCountryById(findId);
-                    pais.ifPresentOrElse(
-                        p -> System.out.println("ID: " + p.getIdCountry() + ", Nombre: " + p.getNameCountry()),
-                        () -> System.out.println("Country no encontrado")
+                    Optional<Country> country = countryService.getCountryById(findId);
+                    country.ifPresentOrElse(
+                        c -> System.out.println("ID: " + c.getIdCountry() + ", Nombre: " + c.getNameCountry()),
+                        () -> System.out.println("Pais no encontrado")
                     );
                     break;
 
@@ -66,8 +66,8 @@ public class CountryConsoleAdapter {
                     break;
 
                 case 5:
-                    countryService.getAllCountries().forEach(p -> {
-                        System.out.println("ID: " + p.getIdCountry() + ", Nombre: " + p.getNameCountry());
+                    countryService.getAllCountries().forEach(c -> {
+                        System.out.println("ID: " + c.getIdCountry() + ", Nombre: " + c.getNameCountry());
                     });
                     break;
 
