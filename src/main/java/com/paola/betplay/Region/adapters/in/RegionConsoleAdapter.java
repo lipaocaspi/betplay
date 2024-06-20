@@ -24,14 +24,22 @@ public class RegionConsoleAdapter {
             System.out.println("5. Listar todas Regiones");
             System.out.println("6. Salir");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     System.out.print("Ingrese el nombre de la region: ");
                     String createName = scanner.nextLine();
-
-                    Region newRegion = new Region(createName);
+                    // VALIDACION EXISTENCIA DEL PAIS
+                    int idCountry;
+                    int idF;
+                    do {
+                        System.out.println("Ingrese el Id del pais: ");
+                        idCountry = scanner.nextInt();
+                        idF = regionService.getCountryById(idCountry);
+                    } while (idF == -1);
+        
+                    Region newRegion = new Region(createName, idCountry);
                     regionService.createRegion(newRegion);
                     break;
 
