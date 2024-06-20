@@ -14,6 +14,9 @@ public class CountryConsoleAdapter {
     }
 
     public void start() {
+        int updateId;
+        int deleteId;
+        Optional<Country> foundCountry;
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -36,8 +39,16 @@ public class CountryConsoleAdapter {
                     break;
 
                 case 2:
-                    System.out.print("Ingrese  ID a actualizar: ");
-                    int updateId = scanner.nextInt();
+                    do {
+                        System.out.print("Ingrese ID a actualizar: ");
+                        updateId = scanner.nextInt();
+                        foundCountry = countryService.getCountryById(updateId);
+                        foundCountry.ifPresentOrElse(
+                            c -> System.out.println("ID: " + c.getIdCountry() + ", Nombre: " + c.getNameCountry()),
+                            () -> System.out.println("Pais no encontrado")
+                        );
+                    } while (!foundCountry.isPresent());
+                    
                     scanner.nextLine();
                     System.out.print("Ingrese el nuevo nombre: ");
                     String updateName = scanner.nextLine();
@@ -47,7 +58,7 @@ public class CountryConsoleAdapter {
                     break;
 
                 case 3:
-                    System.out.print("Ingrese el Id del pais a buscar: ");
+                    System.out.print("Ingrese el ID del pais a buscar: ");
                     int findId = scanner.nextInt();
                     scanner.nextLine();
 
@@ -59,10 +70,18 @@ public class CountryConsoleAdapter {
                     break;
 
                 case 4:
-                    System.out.print("Ingrese el Id del pais a borrar: ");
-                    int deleteId = scanner.nextInt();
+                    do {
+                        System.out.print("Ingrese el ID del pais a borrar: ");
+                        deleteId = scanner.nextInt();
+                        foundCountry = countryService.getCountryById(deleteId);
+                        if (foundCountry.isPresent()) {
+                            countryService.deleteCountry(deleteId);
+                        } else {
+                            System.out.println("Pais no encontrado");
+                        }
+                    } while (!foundCountry.isPresent());
+
                     scanner.nextLine();
-                    countryService.deleteCountry(deleteId);
                     break;
 
                 case 5:
