@@ -1,14 +1,16 @@
 package com.paola.betplay.Match.domain.models;
 
-import java.time.LocalDate;
-
 public class Match {
     private int idMatch;
-    private LocalDate dateMatch;
+    private String dateMatch;
 
     public Match() {}
 
-    public Match(int idMatch, LocalDate dateMatch) {
+    public Match(String dateMatch) {
+        this.dateMatch = dateMatch;
+    }
+
+    public Match(int idMatch, String dateMatch) {
         this.idMatch = idMatch;
         this.dateMatch = dateMatch;
     }
@@ -21,11 +23,11 @@ public class Match {
         this.idMatch = idMatch;
     }
 
-    public LocalDate getDateMatch() {
+    public String getDateMatch() {
         return dateMatch;
     }
 
-    public void setDateMatch(LocalDate dateMatch) {
+    public void setDateMatch(String dateMatch) {
         this.dateMatch = dateMatch;
     }
 }
