@@ -14,6 +14,8 @@ public class RegionConsoleAdapter {
     }
 
     public void start() {
+        int idCountry;
+        int idF;
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -30,11 +32,9 @@ public class RegionConsoleAdapter {
                 case 1:
                     System.out.print("Ingrese el nombre de la region: ");
                     String createName = scanner.nextLine();
-                    // VALIDACION EXISTENCIA DEL PAIS
-                    int idCountry;
-                    int idF;
+                    scanner.nextLine();
                     do {
-                        System.out.println("Ingrese el Id del pais: ");
+                        System.out.println("Ingrese el ID del pais: ");
                         idCountry = scanner.nextInt();
                         idF = regionService.getCountryById(idCountry);
                     } while (idF == -1);
@@ -44,7 +44,7 @@ public class RegionConsoleAdapter {
                     break;
 
                 case 2:
-                    System.out.print("Ingrese  ID a actualizar: ");
+                    System.out.print("Ingrese ID a actualizar: ");
                     int updateId = scanner.nextInt();
                     scanner.nextLine();
                     System.out.print("Ingrese el nuevo nombre: ");
@@ -55,7 +55,7 @@ public class RegionConsoleAdapter {
                     break;
 
                 case 3:
-                    System.out.print("Ingrese el Id de la region a buscar: ");
+                    System.out.print("Ingrese el ID de la region a buscar: ");
                     int findId = scanner.nextInt();
                     scanner.nextLine();
 
@@ -67,7 +67,7 @@ public class RegionConsoleAdapter {
                     break;
 
                 case 4:
-                    System.out.print("Ingrese el Id de la region a borrar: ");
+                    System.out.print("Ingrese el ID de la region a borrar: ");
                     int deleteId = scanner.nextInt();
                     scanner.nextLine();
                     regionService.deleteRegion(deleteId);
