@@ -7,6 +7,20 @@ public class Region {
 
     public Region() {}
 
+    public Region(String nameRegion) {
+        this.nameRegion = nameRegion;
+    }
+
+    public Region(int idRegion, String nameRegion) {
+        this.idRegion = idRegion;
+        this.nameRegion = nameRegion;
+    }
+
+    public Region(String nameRegion, int idCountry) {
+        this.nameRegion = nameRegion;
+        this.idCountry = idCountry;
+    }
+
     public Region(int idRegion, String nameRegion, int idCountry) {
         this.idRegion = idRegion;
         this.nameRegion = nameRegion;
