@@ -16,6 +16,11 @@ public class City {
         this.nameCity = nameCity;
     }
 
+    public City(String nameCity, int idRegion) {
+        this.nameCity = nameCity;
+        this.idRegion = idRegion;
+    }
+
     public City(int idCity, String nameCity, int idRegion) {
         this.idCity = idCity;
         this.nameCity = nameCity;
