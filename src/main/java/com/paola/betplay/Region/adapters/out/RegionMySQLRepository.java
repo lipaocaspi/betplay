@@ -26,7 +26,7 @@ public class RegionMySQLRepository implements RegionRepository {
     @Override
     public void save(Region region) {
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            String query = "INSERT INTO region (name_country, id_country) VALUES (?, ?)";
+            String query = "INSERT INTO region (name_region, id_country) VALUES (?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setString(1, region.getNameRegion());
                 statement.setInt(2, region.getIdCountry());
